@@ -33,42 +33,58 @@ namespace Calculator
             switch (input)
             {
                 case "add":
+                case "+":
+                case "plus":
                     {
                         result = firstNumber + secondNumber;
-                        Console.WriteLine($"{firstNumber} added to {secondNumber} equals {result}.");
+                        Console.WriteLine($"{firstNumber} added to {secondNumber} equals " + string.Format("{0:.#####}", result));
                         break;
                     }
                 case "subtract":
+                case "-":
+                case "sub":
+                case "minus":
                     {
                         result = firstNumber - secondNumber;
-                        Console.WriteLine($"{firstNumber} minus {secondNumber} equals {result}.");
+                        Console.WriteLine($"{firstNumber} minus {secondNumber} equals " + string.Format("{0:.#####}", result));
                         break;
                     }
                 case "multiply":
+                case "x":
+                case "*":
+                case "mult":
+                case "times":
                     {
                         result = firstNumber * secondNumber;
-                        Console.WriteLine($"{firstNumber} multiplied by {secondNumber} equals {result}.");
+                        Console.WriteLine($"{firstNumber} multiplied by {secondNumber} equals " + string.Format("{0:.#####}", result));
                         break;
                     }
                 case "divide":
+                case "\\":
+                case "/":
+                case "div":
+                case "\u00F7":
                     {
                         result = firstNumber / secondNumber;
-                        Console.WriteLine($"{firstNumber} divided by {secondNumber} equals {result}.");
+                        Console.WriteLine($"{firstNumber} divided by {secondNumber} equals " + string.Format("{0:.#####}", result));
                         break;
                     }
                 default:
                     {
+                        //TODO: Get this to loop instead of exiting.
                         Console.WriteLine("No operation was chosen. Exiting.");
                         break;
                     }
+
             }
+        }
 
         /*
          ***Project objectives***
         Create a console application
         Manage a git repository containing a C# console application
         Demonstrate 'branch' workflow
-    
+
         ***Project requirement***    
         -Make a minimum of six commits.
         -Include a .gitignore file that removes the .suo from source control
@@ -84,7 +100,7 @@ namespace Calculator
         -Try to think of additional exception you may catch that could arise from your code.
         -You may demonstrate objected oriented programming through making additional classes.
         Additional classes are not a requirement this week.
-       
+
         The steps for your console application should include:
         -Ask the user for the first number
         -Ask the user for the second number
@@ -93,4 +109,5 @@ namespace Calculator
          */
 
     }
+    
 }
