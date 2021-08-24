@@ -26,7 +26,42 @@ namespace Calculator
                 Console.WriteLine("Input needs to be an integer or decimal\nEnter the second number: ");
                 input = Console.ReadLine();
             }
-        }
+
+            Console.WriteLine("Type one of the following and press enter - add, subtract, multiply, divide: ");
+            input = Console.ReadLine();
+            input.ToLower();
+            switch (input)
+            {
+                case "add":
+                    {
+                        result = firstNumber + secondNumber;
+                        Console.WriteLine($"{firstNumber} added to {secondNumber} equals {result}.");
+                        break;
+                    }
+                case "subtract":
+                    {
+                        result = firstNumber - secondNumber;
+                        Console.WriteLine($"{firstNumber} minus {secondNumber} equals {result}.");
+                        break;
+                    }
+                case "multiply":
+                    {
+                        result = firstNumber * secondNumber;
+                        Console.WriteLine($"{firstNumber} multiplied by {secondNumber} equals {result}.");
+                        break;
+                    }
+                case "divide":
+                    {
+                        result = firstNumber / secondNumber;
+                        Console.WriteLine($"{firstNumber} divided by {secondNumber} equals {result}.");
+                        break;
+                    }
+                default:
+                    {
+                        Console.WriteLine("No operation was chosen. Exiting.");
+                        break;
+                    }
+            }
 
         /*
          ***Project objectives***
