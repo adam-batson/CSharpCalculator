@@ -6,7 +6,9 @@ namespace Calculator
     {
         static void Main(string[] args)
         {
-            
+            decimal firstNumber;
+            decimal secondNumber;
+            decimal result;
         }
 
         /*
