@@ -9,8 +9,11 @@ namespace Calculator
             var firstNumber = 0m;
             var secondNumber = 0m;
             var result = 0m;
-
+            var unsupportedOperation = true;
+            var finished = false;
+            
             Console.WriteLine("This program will add, subtract, multiply, or divide two numbers you will enter.");
+            
             Console.WriteLine("Enter the first number: ");
             string input = Console.ReadLine();
             while (!(Decimal.TryParse(input, out firstNumber)))
@@ -27,55 +30,60 @@ namespace Calculator
                 input = Console.ReadLine();
             }
 
-            Console.WriteLine("Type one of the following and press enter - add, subtract, multiply, divide: ");
-            input = Console.ReadLine();
-            input.ToLower();
-            switch (input)
+            while (unsupportedOperation != false)
             {
-                case "add":
-                case "+":
-                case "plus":
-                    {
-                        result = firstNumber + secondNumber;
-                        Console.WriteLine($"{firstNumber} added to {secondNumber} equals " + string.Format("{0:.#####}", result) + ".");
-                        break;
-                    }
-                case "subtract":
-                case "-":
-                case "sub":
-                case "minus":
-                    {
-                        result = firstNumber - secondNumber;
-                        Console.WriteLine($"{firstNumber} minus {secondNumber} equals " + string.Format("{0:.#####}", result) + ".");
-                        break;
-                    }
-                case "multiply":
-                case "x":
-                case "*":
-                case "mult":
-                case "times":
-                    {
-                        result = firstNumber * secondNumber;
-                        Console.WriteLine($"{firstNumber} multiplied by {secondNumber} equals " + string.Format("{0:.#####}", result) + ".");
-                        break;
-                    }
-                case "divide":
-                case "\\":
-                case "/":
-                case "div":
-                case "\u00F7":
-                    {
-                        result = firstNumber / secondNumber;
-                        Console.WriteLine($"{firstNumber} divided by {secondNumber} equals " + string.Format("{0:.#####}", result) + ".");
-                        break;
-                    }
-                default:
-                    {
-                        //TODO: Get this to loop instead of exiting.
-                        Console.WriteLine("No operation was chosen. Exiting.");
-                        break;
-                    }
-
+                Console.WriteLine("Type one of the following and press enter - add, subtract, multiply, divide: ");
+                input = Console.ReadLine();
+                input.ToLower();
+                switch (input)
+                {
+                    case "add":
+                    case "+":
+                    case "plus":
+                        {
+                            result = firstNumber + secondNumber;
+                            Console.WriteLine($"{firstNumber} added to {secondNumber} equals " + string.Format("{0:.#####}", result) + ".");
+                            unsupportedOperation = false;
+                            break;
+                        }
+                    case "subtract":
+                    case "-":
+                    case "sub":
+                    case "minus":
+                        {
+                            result = firstNumber - secondNumber;
+                            Console.WriteLine($"{firstNumber} minus {secondNumber} equals " + string.Format("{0:.#####}", result) + ".");
+                            unsupportedOperation = false;
+                            break;
+                        }
+                    case "multiply":
+                    case "x":
+                    case "*":
+                    case "mult":
+                    case "times":
+                        {
+                            result = firstNumber * secondNumber;
+                            Console.WriteLine($"{firstNumber} multiplied by {secondNumber} equals " + string.Format("{0:.#####}", result) + ".");
+                            unsupportedOperation = false;
+                            break;
+                        }
+                    case "divide":
+                    case "\\":
+                    case "/":
+                    case "div":
+                    case "\u00F7":
+                        {
+                            result = firstNumber / secondNumber;
+                            Console.WriteLine($"{firstNumber} divided by {secondNumber} equals " + string.Format("{0:.#####}", result) + ".");
+                            unsupportedOperation = false;
+                            break;
+                        }
+                    default:
+                        {
+                            Console.WriteLine("That's not a supported operation.");
+                            break;
+                        }
+                }
             }
         }
 
