@@ -6,9 +6,9 @@ namespace Calculator
     {
         static void Main(string[] args)
         {
-            decimal firstNumber;
-            decimal secondNumber;
-            decimal result;
+            var firstNumber = 0m;
+            var secondNumber = 0m;
+            var result = 0m;
 
             Console.WriteLine("This program will add, subtract, multiply, or divide two numbers you will enter.");
             Console.WriteLine("Enter the first number: ");
@@ -23,7 +23,7 @@ namespace Calculator
             input = Console.ReadLine();
             while (!(Decimal.TryParse(input, out secondNumber)))
             {
-                Console.WriteLine("Input needs to be an integer or decimal\nEnter the second number: ");
+                Console.WriteLine("Input needs to be an integer or var\nEnter the second number: ");
                 input = Console.ReadLine();
             }
 
@@ -37,7 +37,7 @@ namespace Calculator
                 case "plus":
                     {
                         result = firstNumber + secondNumber;
-                        Console.WriteLine($"{firstNumber} added to {secondNumber} equals " + string.Format("{0:.#####}", result));
+                        Console.WriteLine($"{firstNumber} added to {secondNumber} equals " + string.Format("{0:.#####}", result) + ".");
                         break;
                     }
                 case "subtract":
@@ -46,7 +46,7 @@ namespace Calculator
                 case "minus":
                     {
                         result = firstNumber - secondNumber;
-                        Console.WriteLine($"{firstNumber} minus {secondNumber} equals " + string.Format("{0:.#####}", result));
+                        Console.WriteLine($"{firstNumber} minus {secondNumber} equals " + string.Format("{0:.#####}", result) + ".");
                         break;
                     }
                 case "multiply":
@@ -56,7 +56,7 @@ namespace Calculator
                 case "times":
                     {
                         result = firstNumber * secondNumber;
-                        Console.WriteLine($"{firstNumber} multiplied by {secondNumber} equals " + string.Format("{0:.#####}", result));
+                        Console.WriteLine($"{firstNumber} multiplied by {secondNumber} equals " + string.Format("{0:.#####}", result) + ".");
                         break;
                     }
                 case "divide":
@@ -66,7 +66,7 @@ namespace Calculator
                 case "\u00F7":
                     {
                         result = firstNumber / secondNumber;
-                        Console.WriteLine($"{firstNumber} divided by {secondNumber} equals " + string.Format("{0:.#####}", result));
+                        Console.WriteLine($"{firstNumber} divided by {secondNumber} equals " + string.Format("{0:.#####}", result) + ".");
                         break;
                     }
                 default:
@@ -86,9 +86,9 @@ namespace Calculator
         Demonstrate 'branch' workflow
 
         ***Project requirement***    
-        -Make a minimum of six commits.
-        -Include a .gitignore file that removes the .suo from source control
-        -Follow csharp code conventions
+        -Make a minimum of six commits. - Done
+        -Include a .gitignore file that removes the .suo from source control - Done
+        -Follow csharp code conventions - Done
         -Follow the four outlined steps above. You may choose to do more, 
         like ask for three numbers if you finish the project quickly
         -Implement a form of branching, i.e. if/else or switch statement
