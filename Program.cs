@@ -9,6 +9,23 @@ namespace Calculator
             decimal firstNumber;
             decimal secondNumber;
             decimal result;
+
+            Console.WriteLine("This program will add, subtract, multiply, or divide two numbers you will enter.");
+            Console.WriteLine("Enter the first number: ");
+            string input = Console.ReadLine();
+            while (!(Decimal.TryParse(input, out firstNumber)))
+            {
+                Console.WriteLine("Input needs to be an integer or decimal\nEnter the first number: ");
+                input = Console.ReadLine();
+            }
+
+            Console.WriteLine("Enter the second number: ");
+            input = Console.ReadLine();
+            while (!(Decimal.TryParse(input, out secondNumber)))
+            {
+                Console.WriteLine("Input needs to be an integer or decimal\nEnter the second number: ");
+                input = Console.ReadLine();
+            }
         }
 
         /*
